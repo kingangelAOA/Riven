@@ -11,7 +11,7 @@
             "stopOnEntry": true,
             "pythonPath": "${config:python.pythonPath}",
             "program": "${file}",
-            "cwd": "${}",
+            "cwd": "${workspaceFolder}",
             "env": {},
             "envFile": "${workspaceFolder}/.env",
             "debugOptions": [
@@ -79,18 +79,17 @@
             "type": "python",
             "request": "launch",
             "stopOnEntry": false,
-            "pythonPath": "python",
-            "program": "${workspaceFolder}/.env/bin/flask",
+            "pythonPath": "${config:python.pythonPath}",
+            "program": "${workspaceFolder}/run.py",
             "cwd": "${workspaceFolder}",
             "env": {
-                "FLASK_APP": "${workspaceRoot}/run.py"
             },
             "args": [
                 "run",
                 "--no-debugger",
                 "--no-reload"
             ],
-            "envFile": "${workspaceRoot}/.env",
+            "envFile": "${workspaceFolder}/.env",
             "debugOptions": [
                 "RedirectOutput"
             ]
